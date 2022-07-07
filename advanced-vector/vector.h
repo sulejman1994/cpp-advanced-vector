@@ -203,14 +203,6 @@ public:
         --size_;
     }
     
-   /* iterator Insert(const_iterator pos, const T& value) {
-        return Emplace(pos, value);
-    }
-    
-    iterator Insert(const_iterator pos, T&& value) {
-        return Emplace(pos, std::move(value));
-    }*/
-    
     template <typename Type>
     iterator Insert(const_iterator pos, Type&& value) {
         return Emplace(pos, std::forward<Type> (value));
@@ -344,3 +336,4 @@ private:
     RawMemory<T> data_;
     size_t size_ = 0;
 };
+
